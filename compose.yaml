@@ -1,0 +1,22 @@
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: tinyerp-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tinyerp
+      POSTGRES_USER: tinyerp
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Bitte DB_PASSWORD in der .env-Datei setzen}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - tinyerp_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tinyerp -d tinyerp"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  tinyerp_postgres_data:
