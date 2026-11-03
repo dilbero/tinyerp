@@ -8,6 +8,6 @@ public class HealthController {
 
     @GetMapping("/api/health")
     public String health() {
-        return "TinyERP Backend läuft!";
+        return "TinyERP Backend is running!";
     }
 }
