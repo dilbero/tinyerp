@@ -1,0 +1,30 @@
+<aside class="sidebar">
+  <button class="active" (click)="selectMenuItem('Dashboard')">Dashboard</button>
+  <button (click)="selectMenuItem('Geschäftspartner')">Geschäftspartner</button>
+  <button (click)="selectMenuItem('Artikel')">Artikel</button>
+
+  <button (click)="toggleMenu('rechnungen')">Rechnungen</button>
+
+  @if (openMenu === 'rechnungen') {
+    <div class="submenu">
+      <button (click)="selectMenuItem('Ausgangsrechnungen')">Ausgangsrechnungen</button>
+      <button (click)="selectMenuItem('Eingangsrechnungen')">Eingangsrechnungen</button>
+    </div>
+  }
+
+  <button (click)="toggleMenu('zahlungen')">Zahlungen</button>
+
+  @if (openMenu === 'zahlungen') {
+    <div class="submenu">
+      <button (click)="selectMenuItem('Ausgangszahlungen')">Ausgangszahlungen</button>
+      <button (click)="selectMenuItem('Eingangszahlungen')">Eingangszahlungen</button>
+    </div>
+  }
+
+  <button (click)="selectMenuItem('Lieferungen')">Lieferungen</button>
+  <button (click)="selectMenuItem('Lager')">Lager</button>
+  <button (click)="selectMenuItem('Produktion')">Produktion</button>
+  <button (click)="selectMenuItem('Projekte')">Projekte</button>
+  <button (click)="selectMenuItem('Personal')">Personal</button>
+  <button (click)="selectMenuItem('Lizenzen')">Lizenzen</button>
+</aside>

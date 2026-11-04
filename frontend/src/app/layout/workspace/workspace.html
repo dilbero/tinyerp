@@ -1,0 +1,31 @@
+<div
+  class="workspace"
+  (mousemove)="moveWindow($event)"
+  (mouseup)="stopDragging()"
+  (mouseleave)="stopDragging()"
+>
+
+<h2>Dashboard</h2>
+
+  @for (window of openWindows(); track window.id) {
+    <div
+      class="window"
+      [style.position]="'absolute'"
+      [style.left.px]="window.x"
+      [style.top.px]="window.y"
+    >
+      <div
+        class="window-title"
+        (mousedown)="startDragging($event, window.id)"
+      >
+        <span>{{ window.type }}</span>
+
+        <button (click)="closeWindow(window.id)">×</button>
+      </div>
+
+      <div class="window-content">
+        Hier kommt später das Formular für {{ window.type }} hin.
+      </div>
+    </div>
+  }
+</div>

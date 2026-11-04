@@ -1,0 +1,42 @@
+.workspace {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  background-color: #f5f6fa;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+.window {
+  width: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  margin-top: 20px;
+}
+
+.window-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #e8efff;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  cursor: move;
+}
+
+.window-title button {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.window-content {
+  padding: 16px;
+  min-height: 100px;
+}
